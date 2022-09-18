@@ -5,6 +5,7 @@ const aliasResolver = require('./aliasResolver');
 
 module.exports = {
   mode: 'development',
+  devtool: 'eval-cheap-module-source-map',
   entry: path.resolve(__dirname, './src/index.tsx'),
   optimization: {
     runtimeChunk: 'single'
@@ -35,14 +36,15 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, './public/index.html'),
-      favicon: path.resolve(__dirname, './public/favicon.ico')
+      template: path.resolve(__dirname, './public/index.html')
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, './public/robots.txt'),
-          to: 'robots.txt'
+          from: path.resolve(__dirname, './public/robots.txt')
+        },
+        {
+          from: path.resolve(__dirname, './public/favicon.ico')
         }
       ]
     })
@@ -64,8 +66,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico|txt)$/i,
         exclude: /node_modules/,
-        type: 'asset/resource',
-        use: ['file-loader?name=[name].[ext]']
+        type: 'asset/resource'
       },
       {
         test: /\.(ts|tsx)$/,
