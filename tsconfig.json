@@ -10,7 +10,8 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": ["src"]
 }
