@@ -11,7 +11,7 @@
     "allowJs": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["node_modules/@types", "src/images.d.ts"]
   },
   "include": ["src"]
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const aliasResolver = require('./aliasResolver');
+const webpackPatterns = require('./webpackPatterns');
 
 module.exports = {
   mode: 'development',
@@ -38,16 +39,7 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, './public/index.html')
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, './public/robots.txt')
-        },
-        {
-          from: path.resolve(__dirname, './public/favicon.ico')
-        }
-      ]
-    })
+    new CopyWebpackPlugin({ patterns: webpackPatterns })
   ],
   module: {
     rules: [
