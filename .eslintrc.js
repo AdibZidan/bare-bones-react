@@ -22,7 +22,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'no-undef': 'off',
     'eslint-disable-next-line': 'off',
-    '@typescript-eslint/no-empty-function': 'off'
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error'
   },
   settings: {
     react: { version: 'detect' }
