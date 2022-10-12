@@ -10,7 +10,6 @@
     "p:write": "npx prettier --write .",
     "lint:fix": "eslint --fix --ext .tsx ."
   },
-  "keywords": [],
   "author": "Adib Zidan",
   "license": "MIT",
   "dependencies": {
